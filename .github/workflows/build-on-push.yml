@@ -1,4 +1,4 @@
-name: Eleventy Build on Push
+name: Build on Contentful Publish Event
 on:
 	repository_dispatch:
     	types: [publish-event]
@@ -27,6 +27,6 @@ jobs:
 
   	- name: Deploy
     	uses: peaceiris/actions-gh-pages@v3
-    	With:
-deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+    	with:
+      	deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
       	publish_dir: _site
